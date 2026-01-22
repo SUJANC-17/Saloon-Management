@@ -203,6 +203,7 @@
   text-decoration: underline;
 }
 
+<<<<<<< HEAD
 .forgot-password-link {
   text-align: center;
   margin-top: 15px;
@@ -210,6 +211,8 @@
   color: #636e72;
 }
 
+=======
+>>>>>>> 832cd83f75b200c2e5b4d8c733666d3a6dab5f13
 /* Role Selector Styles */
 .role-selector {
   display: flex;

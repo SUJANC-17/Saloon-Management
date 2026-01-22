@@ -47,10 +47,13 @@ const LoginForm = ({ onSubmit, error }) => {
           {error && <p className="error-message">{error}</p>}
 
           <button type="submit" className="auth-button">Login</button>
+<<<<<<< HEAD
 
           <p className="forgot-password-link">
             <a href="/forgot-password" className="auth-link">Forgot Password?</a>
           </p>
+=======
+>>>>>>> 832cd83f75b200c2e5b4d8c733666d3a6dab5f13
         </form>
 
         <p className="auth-footer">

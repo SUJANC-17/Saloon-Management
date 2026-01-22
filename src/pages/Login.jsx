@@ -29,6 +29,7 @@ const Login = () => {
     }
   };
 
+<<<<<<< HEAD
   // Demo Login Handler
   const handleDemoLogin = (role) => {
     try {
@@ -127,6 +128,9 @@ const Login = () => {
       </div>
     </div>
   );
+=======
+  return <LoginForm onSubmit={handleSubmit} error={error} />;
+>>>>>>> 832cd83f75b200c2e5b4d8c733666d3a6dab5f13
 };
 
 export default Login;
