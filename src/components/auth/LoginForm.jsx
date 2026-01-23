@@ -7,18 +7,18 @@ const LoginForm = ({ onSubmit, error }) => {
   return (
     <div className="auth-container">
       <div className="auth-box">
-        <h1 className="auth-title">🏢 Salon Manager</h1>
+        <h1 className="auth-title">Salon Manager</h1>
         <p className="auth-subtitle">Login to your account</p>
-        
+
         <form onSubmit={onSubmit} className="auth-form">
           <div className="form-group">
             <label htmlFor="email" className="form-label">Email Address</label>
-            <input 
+            <input
               id="email"
-              name="email" 
+              name="email"
               type="email"
               placeholder="Enter your email"
-              required 
+              required
               className="form-input"
             />
           </div>
@@ -26,20 +26,20 @@ const LoginForm = ({ onSubmit, error }) => {
           <div className="form-group">
             <label htmlFor="password" className="form-label">Password</label>
             <div className="password-wrapper">
-              <input 
+              <input
                 id="password"
-                name="password" 
+                name="password"
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter your password"
-                required 
+                required
                 className="form-input"
               />
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="toggle-password"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? "👁️" : "👁️‍🗨️"}
+                {showPassword ? "Hide" : "Show"}
               </button>
             </div>
           </div>
@@ -47,18 +47,15 @@ const LoginForm = ({ onSubmit, error }) => {
           {error && <p className="error-message">{error}</p>}
 
           <button type="submit" className="auth-button">Login</button>
-<<<<<<< HEAD
 
           <p className="forgot-password-link">
             <a href="/forgot-password" className="auth-link">Forgot Password?</a>
           </p>
-=======
->>>>>>> 832cd83f75b200c2e5b4d8c733666d3a6dab5f13
         </form>
 
         <p className="auth-footer">
-          Don't have an account? 
-          <a href="/register/user" className="auth-link"> Register as User</a> or 
+          Don't have an account?
+          <a href="/register/user" className="auth-link"> Register as User</a> or
           <a href="/register/owner" className="auth-link"> Register as Owner</a>
         </p>
       </div>

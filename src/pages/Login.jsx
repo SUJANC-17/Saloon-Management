@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    
+
     try {
       const data = Object.fromEntries(new FormData(e.target));
       const res = await authService.login(data);
@@ -29,7 +29,6 @@ const Login = () => {
     }
   };
 
-<<<<<<< HEAD
   // Demo Login Handler
   const handleDemoLogin = (role) => {
     try {
@@ -61,7 +60,7 @@ const Login = () => {
   return (
     <div>
       <LoginForm onSubmit={handleSubmit} error={error} />
-      
+
       {/* Demo Login Section */}
       <div
         style={{
@@ -78,7 +77,7 @@ const Login = () => {
         }}
       >
         <p style={{ color: "#636e72", fontSize: "13px", marginBottom: "15px", fontWeight: "600" }}>
-          🧪 OR TRY DEMO LOGIN
+          OR TRY DEMO LOGIN
         </p>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
@@ -99,7 +98,7 @@ const Login = () => {
             onMouseEnter={(e) => (e.target.style.background = "#5d4fb5")}
             onMouseLeave={(e) => (e.target.style.background = "#6c5ce7")}
           >
-            👤 Demo Customer
+            Demo Customer
           </button>
           <button
             type="button"
@@ -118,7 +117,7 @@ const Login = () => {
             onMouseEnter={(e) => (e.target.style.background = "#00a383")}
             onMouseLeave={(e) => (e.target.style.background = "#00b894")}
           >
-            🏪 Demo Owner
+            Demo Owner
           </button>
         </div>
 
@@ -128,9 +127,6 @@ const Login = () => {
       </div>
     </div>
   );
-=======
-  return <LoginForm onSubmit={handleSubmit} error={error} />;
->>>>>>> 832cd83f75b200c2e5b4d8c733666d3a6dab5f13
 };
 
 export default Login;

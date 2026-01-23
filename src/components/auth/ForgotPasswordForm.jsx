@@ -17,18 +17,18 @@ const ForgotPasswordForm = ({ onSubmit, error, success }) => {
   return (
     <div className="auth-container">
       <div className="auth-box">
-        <h1 className="auth-title">🏢 Salon Manager</h1>
+        <h1 className="auth-title">Salon Manager</h1>
         <p className="auth-subtitle">Reset your password</p>
-        
+
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
             <label htmlFor="email" className="form-label">Email Address</label>
-            <input 
+            <input
               id="email"
-              name="email" 
+              name="email"
               type="email"
               placeholder="Enter your registered email"
-              required 
+              required
               className="form-input"
               disabled={isLoading}
             />
@@ -37,8 +37,8 @@ const ForgotPasswordForm = ({ onSubmit, error, success }) => {
           {error && <p className="error-message">{error}</p>}
           {success && <p className="success-message">{success}</p>}
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="auth-button"
             disabled={isLoading}
           >
@@ -47,7 +47,7 @@ const ForgotPasswordForm = ({ onSubmit, error, success }) => {
         </form>
 
         <p className="auth-footer">
-          Remember your password? 
+          Remember your password?
           <a href="/login" className="auth-link"> Login here</a>
         </p>
       </div>

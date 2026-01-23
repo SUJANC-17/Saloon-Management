@@ -20,30 +20,30 @@ const RegisterForm = ({ onSubmit, role, error, success }) => {
   return (
     <div className="auth-container">
       <div className="auth-box">
-        <h1 className="auth-title">🏢 Salon Manager</h1>
+        <h1 className="auth-title">Salon Manager</h1>
         <p className="auth-subtitle">Register as {role === "USER" ? "a Customer" : "a Salon Owner"}</p>
-        
+
         <form onSubmit={handleFormSubmit} className="auth-form">
           <div className="form-group">
             <label htmlFor="name" className="form-label">Full Name</label>
-            <input 
+            <input
               id="name"
-              name="name" 
+              name="name"
               type="text"
               placeholder="Enter your full name"
-              required 
+              required
               className="form-input"
             />
           </div>
 
           <div className="form-group">
             <label htmlFor="email" className="form-label">Email Address</label>
-            <input 
+            <input
               id="email"
-              name="email" 
+              name="email"
               type="email"
               placeholder="Enter your email"
-              required 
+              required
               className="form-input"
             />
           </div>
@@ -51,20 +51,20 @@ const RegisterForm = ({ onSubmit, role, error, success }) => {
           <div className="form-group">
             <label htmlFor="password" className="form-label">Password</label>
             <div className="password-wrapper">
-              <input 
+              <input
                 id="password"
-                name="password" 
+                name="password"
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter a strong password"
-                required 
+                required
                 className="form-input"
               />
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="toggle-password"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? "👁️" : "👁️‍🗨️"}
+                {showPassword ? "Hide" : "Show"}
               </button>
             </div>
           </div>
@@ -73,21 +73,21 @@ const RegisterForm = ({ onSubmit, role, error, success }) => {
             <>
               <div className="form-group">
                 <label htmlFor="salonName" className="form-label">Salon Name</label>
-                <input 
+                <input
                   id="salonName"
-                  name="salonName" 
+                  name="salonName"
                   type="text"
                   placeholder="Enter your salon name"
-                  required 
+                  required
                   className="form-input"
                 />
               </div>
 
               <div className="form-group">
                 <label htmlFor="phone" className="form-label">Phone Number</label>
-                <input 
+                <input
                   id="phone"
-                  name="phone" 
+                  name="phone"
                   type="tel"
                   placeholder="Enter your phone number"
                   className="form-input"
@@ -96,11 +96,11 @@ const RegisterForm = ({ onSubmit, role, error, success }) => {
             </>
           )}
 
-          {error && <p className="error-message">❌ {error}</p>}
-          {success && <p className="success-message">✓ {success}</p>}
+          {error && <p className="error-message">{error}</p>}
+          {success && <p className="success-message">{success}</p>}
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="auth-button"
             disabled={loading}
           >
@@ -109,7 +109,7 @@ const RegisterForm = ({ onSubmit, role, error, success }) => {
         </form>
 
         <p className="auth-footer">
-          Already have an account? 
+          Already have an account?
           <a href="/login" className="auth-link"> Login here</a>
         </p>
       </div>

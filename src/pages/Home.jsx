@@ -10,7 +10,7 @@ const Home = () => {
       <nav className="home-navbar">
         <div className="navbar-container">
           <div className="navbar-logo">
-            🏢 <span>Salon Manager</span>
+            <span>Salon Manager</span>
           </div>
           <div className="navbar-buttons">
             <button onClick={() => navigate("/login")} className="nav-btn login-btn">
@@ -35,15 +35,15 @@ const Home = () => {
           </p>
           <div className="hero-buttons">
             <button onClick={() => navigate("/login")} className="btn-primary">
-              Book Now 📅
+              Book Now
             </button>
             <button onClick={() => navigate("/register/owner")} className="btn-secondary">
-              Manage Your Salon 🏢
+              Manage Your Salon
             </button>
           </div>
         </div>
         <div className="hero-image">
-          <div className="hero-icon">💇‍♀️</div>
+          <div className="hero-icon"></div>
         </div>
       </section>
 
@@ -51,39 +51,39 @@ const Home = () => {
       <section className="features-section">
         <h2 className="section-title">Why Choose Salon Manager?</h2>
         <div className="features-grid">
-          
+
           <div className="feature-card">
-            <div className="feature-icon">🔍</div>
+            <div className="feature-icon"></div>
             <h3>Easy Discovery</h3>
             <p>Browse and discover salons near you with detailed information and reviews.</p>
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">⏰</div>
+            <div className="feature-icon"></div>
             <h3>Real-Time Availability</h3>
             <p>Check instant availability and book your preferred time slots online.</p>
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">📅</div>
+            <div className="feature-icon"></div>
             <h3>Easy Booking</h3>
             <p>Book appointments in seconds with our simple and intuitive booking process.</p>
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">⭐</div>
+            <div className="feature-icon"></div>
             <h3>Reviews & Ratings</h3>
             <p>Read genuine reviews from other customers to make informed choices.</p>
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">💰</div>
+            <div className="feature-icon"></div>
             <h3>Transparent Pricing</h3>
             <p>See clear pricing for all services before you book.</p>
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">🔔</div>
+            <div className="feature-icon"></div>
             <h3>Smart Notifications</h3>
             <p>Get reminders and updates about your upcoming appointments.</p>
           </div>
@@ -95,7 +95,7 @@ const Home = () => {
       <section className="how-it-works">
         <h2 className="section-title">How It Works</h2>
         <div className="steps-container">
-          
+
           <div className="step">
             <div className="step-number">1</div>
             <h3>Sign Up</h3>
@@ -126,7 +126,7 @@ const Home = () => {
       {/* For Customers Section */}
       <section className="user-section">
         <div className="user-content">
-          <h2>👤 For Customers</h2>
+          <h2>For Customers</h2>
           <p>Looking to book your next salon appointment?</p>
           <ul className="benefits-list">
             <li>✓ Browse thousands of salons</li>
@@ -145,7 +145,7 @@ const Home = () => {
       {/* For Salon Owners Section */}
       <section className="owner-section">
         <div className="owner-content">
-          <h2>🏢 For Salon Owners</h2>
+          <h2>For Salon Owners</h2>
           <p>Ready to grow your salon business?</p>
           <ul className="benefits-list">
             <li>✓ Manage your salon profile</li>
@@ -177,7 +177,7 @@ const Home = () => {
             <p>Bookings</p>
           </div>
           <div className="stat">
-            <h3>4.8⭐</h3>
+            <h3>4.8</h3>
             <p>Average Rating</p>
           </div>
         </div>
@@ -189,10 +189,10 @@ const Home = () => {
         <p>Join thousands of customers already using Salon Manager</p>
         <div className="cta-buttons">
           <button onClick={() => navigate("/login")} className="btn-large primary">
-            Login Now 🔐
+            Login Now
           </button>
           <button onClick={() => navigate("/register/user")} className="btn-large secondary">
-            Sign Up as Customer 👤
+            Sign Up as Customer
           </button>
         </div>
       </section>
@@ -201,7 +201,7 @@ const Home = () => {
       <footer className="home-footer">
         <div className="footer-content">
           <div className="footer-section">
-            <h4>🏢 Salon Manager</h4>
+            <h4>Salon Manager</h4>
             <p>Your trusted platform for salon bookings and management.</p>
           </div>
           <div className="footer-section">

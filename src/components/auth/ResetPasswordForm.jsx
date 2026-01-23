@@ -8,7 +8,7 @@ const ResetPasswordForm = ({ onSubmit, error, success, token }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const password = e.target.password.value;
     const confirmPassword = e.target.confirmPassword.value;
 
@@ -30,30 +30,30 @@ const ResetPasswordForm = ({ onSubmit, error, success, token }) => {
   return (
     <div className="auth-container">
       <div className="auth-box">
-        <h1 className="auth-title">🏢 Salon Manager</h1>
+        <h1 className="auth-title">Salon Manager</h1>
         <p className="auth-subtitle">Create a new password</p>
-        
+
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
             <label htmlFor="password" className="form-label">New Password</label>
             <div className="password-wrapper">
-              <input 
+              <input
                 id="password"
-                name="password" 
+                name="password"
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter new password"
-                required 
+                required
                 className="form-input"
                 disabled={isLoading}
                 minLength="6"
               />
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="toggle-password"
                 onClick={() => setShowPassword(!showPassword)}
                 disabled={isLoading}
               >
-                {showPassword ? "👁️" : "👁️‍🗨️"}
+                {showPassword ? "Hide" : "Show"}
               </button>
             </div>
           </div>
@@ -61,23 +61,23 @@ const ResetPasswordForm = ({ onSubmit, error, success, token }) => {
           <div className="form-group">
             <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
             <div className="password-wrapper">
-              <input 
+              <input
                 id="confirmPassword"
-                name="confirmPassword" 
+                name="confirmPassword"
                 type={showConfirmPassword ? "text" : "password"}
                 placeholder="Confirm new password"
-                required 
+                required
                 className="form-input"
                 disabled={isLoading}
                 minLength="6"
               />
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="toggle-password"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 disabled={isLoading}
               >
-                {showConfirmPassword ? "👁️" : "👁️‍🗨️"}
+                {showConfirmPassword ? "Hide" : "Show"}
               </button>
             </div>
           </div>
@@ -85,8 +85,8 @@ const ResetPasswordForm = ({ onSubmit, error, success, token }) => {
           {error && <p className="error-message">{error}</p>}
           {success && <p className="success-message">{success}</p>}
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="auth-button"
             disabled={isLoading}
           >
