@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    
+
     try {
       const data = Object.fromEntries(new FormData(e.target));
       const res = await authService.login(data);
@@ -51,7 +51,13 @@ const Login = () => {
       setUser({ email: mockPayload.sub, role: mockPayload.role });
 
       // Redirect based on role
-      role === "OWNER" ? navigate("/owner-dashboard") : navigate("/user");
+      if (role === "ADMIN") {
+        navigate("/admin");
+      } else if (role === "OWNER") {
+        navigate("/owner-dashboard");
+      } else {
+        navigate("/user");
+      }
     } catch (err) {
       setError("Demo login failed");
     }
@@ -60,7 +66,7 @@ const Login = () => {
   return (
     <div>
       <LoginForm onSubmit={handleSubmit} error={error} />
-      
+
       {/* Demo Login Section */}
       <div
         style={{
@@ -80,7 +86,7 @@ const Login = () => {
           🧪 OR TRY DEMO LOGIN
         </p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px" }}>
           <button
             type="button"
             onClick={() => handleDemoLogin("USER")}
@@ -92,13 +98,13 @@ const Login = () => {
               borderRadius: "8px",
               fontWeight: "600",
               cursor: "pointer",
-              fontSize: "13px",
+              fontSize: "12px",
               transition: "all 0.3s ease",
             }}
             onMouseEnter={(e) => (e.target.style.background = "#5d4fb5")}
             onMouseLeave={(e) => (e.target.style.background = "#6c5ce7")}
           >
-            👤 Demo Customer
+            👤 Customer
           </button>
           <button
             type="button"
@@ -111,13 +117,32 @@ const Login = () => {
               borderRadius: "8px",
               fontWeight: "600",
               cursor: "pointer",
-              fontSize: "13px",
+              fontSize: "12px",
               transition: "all 0.3s ease",
             }}
             onMouseEnter={(e) => (e.target.style.background = "#00a383")}
             onMouseLeave={(e) => (e.target.style.background = "#00b894")}
           >
-            🏪 Demo Owner
+            🏪 Owner
+          </button>
+          <button
+            type="button"
+            onClick={() => handleDemoLogin("ADMIN")}
+            style={{
+              padding: "12px",
+              background: "#ff7675",
+              color: "white",
+              border: "none",
+              borderRadius: "8px",
+              fontWeight: "600",
+              cursor: "pointer",
+              fontSize: "12px",
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={(e) => (e.target.style.background = "#d63031")}
+            onMouseLeave={(e) => (e.target.style.background = "#ff7675")}
+          >
+            🔐 Admin
           </button>
         </div>
 

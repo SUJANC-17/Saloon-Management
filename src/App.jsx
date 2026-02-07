@@ -9,6 +9,10 @@ import RoleBasedRoute from "./components/routes/RoleBasedRoute";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
 import OwnerDashboard from "./pages/OwnerDashboard";
 import UserRoutes from "./user/routes";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import PartnerApproval from "./pages/admin/PartnerApproval";
+import UserManagement from "./pages/admin/UserManagement";
+import BookingOverview from "./pages/admin/BookingOverview";
 
 const App = () => {
   return (
@@ -37,6 +41,22 @@ const App = () => {
           <ProtectedRoute>
             <RoleBasedRoute allowedRoles={["OWNER"]}>
               <OwnerDashboard />
+            </RoleBasedRoute>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/*"
+        element={
+          <ProtectedRoute>
+            <RoleBasedRoute allowedRoles={["ADMIN"]}>
+              <Routes>
+                <Route path="/" element={<AdminDashboard />} />
+                <Route path="/partner-approval" element={<PartnerApproval />} />
+                <Route path="/users" element={<UserManagement />} />
+                <Route path="/bookings" element={<BookingOverview />} />
+              </Routes>
             </RoleBasedRoute>
           </ProtectedRoute>
         }
