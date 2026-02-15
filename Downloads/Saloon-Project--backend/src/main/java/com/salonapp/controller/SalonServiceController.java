@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/services")
+@RequestMapping("/api/services")
 public class SalonServiceController {
 
     private final ServiceManagementService service;
@@ -18,13 +18,13 @@ public class SalonServiceController {
 
     @PostMapping("/salons/{salonId}")
     public ServiceItem addService(@PathVariable Long salonId,
-                                  @RequestBody ServiceItem salonService) {
+            @RequestBody ServiceItem salonService) {
         return service.addService(salonId, salonService);
     }
 
     @PutMapping("/{id}")
     public ServiceItem update(@PathVariable Long id,
-                              @RequestBody ServiceItem salonService) {
+            @RequestBody ServiceItem salonService) {
         return service.updateService(id, salonService);
     }
 

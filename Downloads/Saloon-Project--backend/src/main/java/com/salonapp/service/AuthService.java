@@ -17,13 +17,16 @@ public class AuthService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final NotificationService notificationService;
+    private final JwtUtil jwtUtil;
 
     public AuthService(UserRepository userRepository,
-                       PasswordEncoder passwordEncoder,
-                       NotificationService notificationService) {
+            PasswordEncoder passwordEncoder,
+            NotificationService notificationService,
+            JwtUtil jwtUtil) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.notificationService = notificationService;
+        this.jwtUtil = jwtUtil;
     }
 
     public String register(RegisterRequest request) {
@@ -44,27 +47,35 @@ public class AuthService {
         notificationService.notifyUser(
                 user,
                 "Welcome " + user.getName() +
-                        "\n\nYour Salon account has been created successfully."
-        );
-
+                        "\n\nYour Salon account has been created successfully.");
 
         return "Registered successfully";
     }
 
-    public String login(LoginRequest request) {
-
+    public java.util.Map<String, String> login(LoginRequest request) {
+        System.out.println("Login attempt for email: " + request.getEmail());
         User user = userRepository.findByEmail(request.getEmail())
-                .orElseThrow(() -> new RuntimeException("Invalid email"));
+                .orElseGet(() -> {
+                    System.out.println("User not found for email: " + request.getEmail());
+                    return null;
+                });
+
+        if (user == null) {
+            throw new RuntimeException("Invalid email");
+        }
 
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+            System.out.println("Invalid password for email: " + request.getEmail());
             throw new RuntimeException("Invalid password");
         }
 
+        System.out.println("Login successful for email: " + request.getEmail());
+
         notificationService.notifyUser(
                 user,
-                "Login successful at " + LocalDateTime.now()
-        );
+                "Login successful at " + LocalDateTime.now());
 
-        return JwtUtil.generateToken(user.getEmail());
+        String token = jwtUtil.generateToken(user.getEmail(), user.getRole().name());
+        return java.util.Map.of("token", token);
     }
 }

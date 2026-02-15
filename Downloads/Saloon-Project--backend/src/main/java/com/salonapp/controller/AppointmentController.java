@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/appointments")
+@RequestMapping("/api/appointments")
 public class AppointmentController {
 
     private final AppointmentService service;
@@ -18,9 +18,9 @@ public class AppointmentController {
 
     @PostMapping("/book")
     public Appointment book(@RequestParam Long userId,
-                            @RequestParam Long salonId,
-                            @RequestParam Long serviceId,
-                            @RequestParam Long slotId) {
+            @RequestParam Long salonId,
+            @RequestParam Long serviceId,
+            @RequestParam Long slotId) {
         return service.book(userId, salonId, serviceId, slotId);
     }
 

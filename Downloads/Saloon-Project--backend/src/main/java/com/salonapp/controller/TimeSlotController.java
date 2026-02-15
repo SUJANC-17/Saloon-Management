@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/timeslots")
+@RequestMapping("/api/timeslots")
 public class TimeSlotController {
 
     private final TimeSlotService service;
@@ -19,7 +19,7 @@ public class TimeSlotController {
     // Create slot
     @PostMapping("/salon/{salonId}")
     public TimeSlot create(@PathVariable Long salonId,
-                           @RequestBody TimeSlot slot) {
+            @RequestBody TimeSlot slot) {
         return service.createSlot(salonId, slot);
     }
 

@@ -47,4 +47,8 @@ public class SalonService {
     public List<Salon> getAllSalons() {
         return salonRepository.findAll();
     }
+
+    public List<Salon> getPendingSalons() {
+        return salonRepository.findByStatus(SalonStatus.PENDING);
+    }
 }
